@@ -2,8 +2,6 @@
 
 Angular 2+ Exercise
 
-![homepage](.github/home.png?raw=true)
-
 ## Setup the Server
 
 1. Generate a project using: `ng new ng-rolodex --style=scss`
