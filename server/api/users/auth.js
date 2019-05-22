@@ -20,7 +20,7 @@ router.route('/logout')
 router.route('/register')
 .post((req, res) => {
   console.log('/register post request, ', req.body);
-  new User()
+  return new User()
   .save({
     username: req.body.username,
     name: req.body.name,
