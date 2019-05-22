@@ -5,7 +5,9 @@ const User = require('../../database/models/User');
 
 const router = express.Router();
 
-router.get('/profile', (req, res) => {
+router.route('/profile')
+.get((req, res) => {
+  console.log('/profile get request');
   if (req.query.user) {
     new User ({id: req.query.user})
     .fetch({withRelated: ['contacts']})
@@ -16,8 +18,11 @@ router.get('/profile', (req, res) => {
       console.log(error);
     });
   }
-})
-.put('/users', (req,res) => {
+});
+
+router.route('/users')
+.put((req,res) => {
+  console.log('/users put request');
   if (req.query.user) {
     new User ({id: req.query.user})
     .save({
