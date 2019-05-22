@@ -36,7 +36,7 @@ router.route('/')
     created_by: req.body.created_by,
   })
   .then((newContact) => {
-    res.json(newContact);
+    return res.json(newContact);
   })
   .catch((error) => {
     console.log(error);
@@ -64,10 +64,43 @@ router.route('/:id')
 .get((req, res) => {
   console.log('/contacts/id get request');
   new Contact()
-  .where({id: req.query.id})
+  .where({id: req.params.id})
   .fetch({withRelated: 'user'})
   .then((contact) => {
     return res.json(contact);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+})
+.put((req, res) => {
+  console.log('/contacts/id put request');
+  return new Contact({id: req.params.id})
+  .save({
+    name: req.body.name,
+    address: req.body.address,
+    mobile: req.body.mobile,
+    work: req.body.work,
+    home: req.body.home,
+    email: req.body.email,
+    twitter: req.body.twitter,
+    instagram: req.body.instagram,
+    github: req.body.github,
+    created_by: req.body.created_by,
+  })
+  .then((changedContact) => {
+    return res.json(changedContact);
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+})
+.delete((req, res) => {
+  console.log('/contacts/id delete request');
+  return new Contact({id: req.params.id})
+  .destroy()
+  .then((result) => {
+    res.json(result);
   })
   .catch((error) => {
     console.log(error);
