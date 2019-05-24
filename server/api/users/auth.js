@@ -7,13 +7,13 @@ const router = express.Router();
 
 router.route('/login')
 .post((req, res) => {
-  console.log('/login post request');
+  console.log('/login post request', req.body);
   res.send('Login OK');
 });
 
 router.route('/logout')
 .post((req, res) => {
-  console.log('/logout post request');
+  console.log('/logout post request', req.body);
   res.send('Logout OK');
 });
 

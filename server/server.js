@@ -9,7 +9,7 @@ const contacts = require('./api/contacts/index');
 const port = process.env.EXPRESS_CONTAINER_PORT;
 
 const app = express();
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.use('/api/contacts', contacts);

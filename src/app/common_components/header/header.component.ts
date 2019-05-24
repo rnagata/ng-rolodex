@@ -8,6 +8,7 @@ import {Component} from '@angular/core';
 
 export class HeaderComponent {
   title: string = 'Angular Rolodex';
+  loggedIn: boolean = true;
 
   constructor() {}
 }

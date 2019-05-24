@@ -1,3 +1,22 @@
 <div class="header">
-  <h1>{{title}}</h1>
+  <div class="header-title">
+    <h1>{{title}}</h1>
+  </div>
+
+  <div class="header-links">
+    <ul *ngIf="loggedIn">
+      <li>
+        <a routerLink="/">Create New Contact</a>
+      </li>
+      <li>
+        <a routerLink="/">View All Contacts</a>
+      </li>
+      <li>
+        <a routerLink="/">View Profile</a>
+      </li>
+      <li>
+        <a routerLink="/">Logout Button</a>
+      </li>
+    </ul>
+  <div>
 </div>

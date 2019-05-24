@@ -1,0 +1,39 @@
+<div class="page">
+  <form>
+    <ul>
+      <li>
+        <h3>Username</h3>
+        {{ profile?.username }}
+        <div>
+          <label>Edit: </label>
+          <input type="text" name="username" [(ngModel)]="updates.username"/>
+        </div>
+      </li>
+      <li>
+        <h3>Name</h3>
+        {{ profile?.name }}
+        <div>
+          <label>Edit: </label>
+          <input type="text" name="name" [(ngModel)]="updates.name"/>
+        </div>
+      </li>
+      <li>
+        <h3>Email</h3>
+        {{ profile?.email }}
+        <div>
+          <label>Edit: </label>
+          <input type="text" name="email" [(ngModel)]="updates.email"/>
+        </div>
+      </li>
+      <li>
+        <h3>Address</h3>
+        {{ profile?.address }}
+        <div>
+          <label>Edit: </label>
+          <input type="text" name="address" [(ngModel)]="updates.address"/>
+        </div>
+      </li>
+    </ul>
+    <button (click)="submit()">Edit</button>
+  </form>
+</div>
