@@ -9,17 +9,25 @@ import { SessionService } from './session.service';
 export class AuthService {
   constructor(private backend: BackendService, private session: SessionService) {}
 
+  register(credentials) {
+    return this.backend.register(credentials)
+    .then((response) => {
+      return response;
+    })
+  }
+
   login(credentials) {
     return this.backend.login(credentials)
-    .then(() => {
-      return this.session.setSession(credentials.username);
+    .then((response) => {
+      return response;
+      //return this.session.setSession(.username);
     });
   }
 
-  logout(credentials) {
-    return this.backend.logout(credentials)
-    .then(() => {
-      return this.session.clearSession();
-    })
-  }
+  // logout() {
+  //   return this.backend.logout()
+  //   .then(() => {
+  //     return this.session.clearSession();
+  //   })
+  // }
 }

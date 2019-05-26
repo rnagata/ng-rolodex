@@ -5,17 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app/app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { HeaderComponent } from './common_components/header/header.component';
-import { LoginForm } from './pages/login/form/form.component';
+import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     LoginComponent,
-    LoginForm,
+    RegisterComponent,
     ProfileComponent,
   ],
   imports: [

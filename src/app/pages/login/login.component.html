@@ -1,6 +1,19 @@
 <div class="page">
   <div id="login">
     <div>Please Login... </div>
-    <login-form></login-form>
+    <div class="form">
+      <form>
+        <div>
+          <label for="username">Username: </label>
+          <input type="text" name="username" [(ngModel)]="formData.username"/>
+        </div>
+        <div>
+          <label for="password">Password: </label>
+          <input type="text" name="password" [(ngModel)]="formData.password"/>
+        </div>
+        <button (click)="submit()">Submit</button>
+        <button type="button" routerLink="/register">Register</button>
+      </form>
+    </div>
   </div>
 </div>

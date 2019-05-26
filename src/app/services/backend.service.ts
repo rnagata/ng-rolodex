@@ -8,8 +8,17 @@ import { HttpClient } from '@angular/common/http';
 export class BackendService {
   constructor(private http: HttpClient) {}
 
+  register(credentials) {
+    return this.http.post('/api/register', credentials).toPromise();
+  }
+
+  searchContacts() {
+    return this.http.get('/api/contacts/search').toPromise();  //GET /api/contacts/search/:term?user=:id
+  }
+
   login(credentials) {
-    return this.http.post('/api/login', credentials).toPromise();
+    // console.log('login()')
+    return this.http.post('/api/login', credentials).toPromise(); 
   }
 
   logout(credentials) {
